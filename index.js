@@ -2,14 +2,19 @@
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-
-signUpButton.addEventListener('click',() => {
+const container =document.getElementById('container');
+const title = document.getElementById('title');
+const signUp = ()=>{
     container.classList.add('right-panel-active');
-});
+    title.innerHTML ="Sign Up";
+};
+const signIn =() =>{
+    container.classList.remove('right-panel-active');
+    title.innerHTML ="Sign In";
+};
 
-signInButton.addEventListener('click',()=> { 
-    container.classList.remove('right-panel-active');    
-});
+signUpButton.addEventListener('click', signUp);
 
+signInButton.addEventListener('click', signIn);
+
+//title.innerHTML ="Sign Up";
