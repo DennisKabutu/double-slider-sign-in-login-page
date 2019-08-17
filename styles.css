@@ -11,7 +11,11 @@ body{
     align-items: center;
     height: 100vh;
     margin: -20px 0 50px;
-    font-family: 'Roboto Slab', serif';
+    font-family: 'Roboto Slab', 'serif';
+    background-image: url(images/Untitled\ design.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     
 }
 
@@ -39,8 +43,8 @@ a{
 }
 button{
     border-radius: 20px;
-    border: 1px solid #ff4b2b;
-    background: #ff4b2b;
+    border: 1px solid #080a27;
+    background: #080a27;
     color: #fff;
     font-size: 12px;
     font-weight:bold;
@@ -159,8 +163,8 @@ input {
 
 .overlay{
     background: #ff416c;
-    background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: -webkit-linear-gradient(to right, #080a27, #484480);
+    background: linear-gradient(to right, #080a27, #484480);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -195,16 +199,39 @@ input {
 .overlay-left {
     transform: translateX(-20%);
 }
-
-.container.right-panel-active .overlay-left {
-    transform: translateX( 100%);
-}
-
 .overlay-right {
     right: 0;
     transform: translateX(0);
 }
 
-.container.right-panel-active .overlay-right {
+/*Animation */
+
+/*Move signin to the left*/
+.container.container.right-panel-active.sign-in-container{
+    transform: translateX(100%);
+}
+
+/*Move overlay to left*/
+.container.container.right-panel-active.overlay-container{
+    transform:translateX(-100%);
+}
+
+/*Bring sign up over sign in*/
+
+.container.right-panel-active.sign-up-container{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+/*move overlay to back to the right */
+.container.container.right-panel-active.overlay{
+    transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left{
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right{
     transform: translateX(20%);
 }
